@@ -33,7 +33,7 @@ def add_me(number_1: int, number_2: int):
 
 @app.get("/multiply/{num_1}/{num_2}/{num_3}")
 def multiply_this_stuff(num_1, num_2, num_3):
-    product = num_1 * num_2 * num_3
+    product = int(num_1) * int(num_2) * int(num_3)
     return {"product": product}
 
 ## Parameters
