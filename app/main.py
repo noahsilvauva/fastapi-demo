@@ -38,6 +38,10 @@ def add_me(number_1: int, number_2: int):
     return {"sum": sum}
 
 # Let's develop a new one:
+@app.get("/divide/{number_1}/{number_2}")
+def divide_me(number_1: int, number_2: int):
+    div = number_2 / number_1
+    return {"quotient": div}
 
 @app.get("/multiply/{num_1}/{num_2}/{num_3}")
 def multiply_this_stuff(num_1, num_2, num_3):
@@ -97,9 +101,9 @@ def patch_item(item_id: int, item: Item):
 
 
 # Incorporate with boto3: simpler than the `requests` library:
-# @app.get("/aws/s3")
-# def fetch_buckets():
-#     s3 = boto3.client("s3")
-#     response = s3.list_buckets()
-#     buckets = response['Buckets']
-#     return {"buckets": buckets}
+@app.get("/aws/s3")
+def fetch_buckets():
+    s3 = boto3.client("s3")
+    response = s3.list_buckets()
+    buckets = response['Buckets']
+    return {"buckets": buckets}
