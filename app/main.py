@@ -19,12 +19,8 @@ DBUSER = os.environ.get('DBUSER')
 DBPASS = os.environ.get('DBPASS')
 DB = "acv7qc"
 
-#@app.get("/static/index.html")
-#def 
-
 # The URL for this API has a /docs endpoint that lets you see and test
 # your various endpoints/methods.
-
 
 # The zone apex is the 'default' page for a URL
 # This will return a simple hello world via GET method.
